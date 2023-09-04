@@ -155,7 +155,7 @@ WiFiManager wifiManager;
 Adafruit_NeoMatrix matrix = Adafruit_NeoMatrix(WIDTH, HEIGHT+2, NEOPIXELPIN,
   NEO_MATRIX_TOP + NEO_MATRIX_LEFT +
   NEO_MATRIX_ROWS + NEO_MATRIX_ZIGZAG,
-  NEO_RGBW            + NEO_KHZ800);
+  NEO_GRBW            + NEO_KHZ800);  // change to NEO_RGBW if order is different 
 
 
 // seven predefined colors32bit (green, red, yellow, purple, orange, lightgreen, blue) 
@@ -869,7 +869,7 @@ void handleCommand() {
     for(int r = 0; r < HEIGHT; r++){
       for(int c = 0; c < WIDTH; c++){
         matrix.fillScreen(0);
-        matrix.drawPixel(c, r, LEDMatrix::color24to16bit(colors24bit[2]));
+        matrix.drawPixel(c, r, LEDMatrix::color24to16bit(colors32bit[2]));
         matrix.show();
         delay(10); 
         }
