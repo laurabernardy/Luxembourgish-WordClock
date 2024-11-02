@@ -1,6 +1,6 @@
-# Lëtzebuergesch Wuerdauer - Luxembourgish Word Clock
+# Lëtzebuergesch Wuertauer - Luxembourgish Word Clock
 
-I teached the excellent [word clock from techniccontroller](https://github.com/techniccontroller/wordclock_esp8266/tree/main) some Luxembourgish.
+I taught the excellent [word clock from techniccontroller](https://github.com/techniccontroller/wordclock_esp8266/tree/main) some Luxembourgish.
 So this version has a different front plate, grid and an other "start message", as well as the corresponding software changes. The installation process is the same, so I included the authors description in this readme ([down there!](https://github.com/laurabernardy/Luxembourgish-WordClock/edit/main/README.md#Wordclock-2.0))
 
 ### hardware and its installation
