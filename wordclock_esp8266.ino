@@ -95,7 +95,7 @@ enum direction {right, left, up, down};
 // width of the led matrix
 #define WIDTH 11
 // height of the led matrix
-#define HEIGHT 11
+#define HEIGHT 12
 
 // own datatype for state machine states
 #define NUM_STATES 6
@@ -358,13 +358,34 @@ void setup() {
 
     // display IP
     uint8_t address = WiFi.localIP()[3];
-    ledmatrix.printChar(1, 0, 'I', maincolor_clock);
-    ledmatrix.printChar(5, 0, 'P', maincolor_clock);
-    ledmatrix.printNumber(0, 6, (address/100), maincolor_clock);
-    ledmatrix.printNumber(4, 6, (address/10)%10, maincolor_clock);
-    ledmatrix.printNumber(8, 6, address%10, maincolor_clock);
-    ledmatrix.drawOnMatrixInstant();
-    delay(2000);
+    matrix.drawPixel(7, 0, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(8, 0, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(9, 0, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(7, 2, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(8, 2, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(9, 2, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(10, 2, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(7, 5, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(8, 5, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(9, 5, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(10, 5, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(4, 6, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(5, 6, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.drawPixel(6, 6, LEDMatrix::color24to16bit(colors24bit[4]));
+    matrix.show();
+    delay(8000);
+    matrix.fillScreen(0);
+    matrix.show();
+    delay(200);
+
+    //ledmatrix.printChar(1, 0, 'I', maincolor_clock);
+    //ledmatrix.printChar(5, 0, 'P', maincolor_clock);
+    //ledmatrix.printNumber(0, 6, (address/100), maincolor_clock);
+    //ledmatrix.printNumber(4, 6, (address/10)%10, maincolor_clock);
+    //ledmatrix.printNumber(8, 6, address%10, maincolor_clock);
+    //ledmatrix.drawOnMatrixInstant();
+    //delay(2000);
+
 
     // clear matrix
     ledmatrix.gridFlush();

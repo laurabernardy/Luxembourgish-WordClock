@@ -112,16 +112,16 @@ void LEDMatrix::setMinIndicator(uint8_t pattern, uint32_t color)
   //  1 -> 0001
   //  0 -> 0000
   if(pattern & 1){
-    targetindicators[0] = color;
+    targetindicators[3] = color;
   }
   if(pattern >> 1 & 1){
-    targetindicators[1] = color;
-  }
-  if(pattern >> 2 & 1){
     targetindicators[2] = color;
   }
+  if(pattern >> 2 & 1){
+    targetindicators[1] = color;
+  }
   if(pattern >> 3 & 1){
-    targetindicators[3] = color;
+    targetindicators[0] = color;
   }
 }
 
@@ -200,7 +200,7 @@ void LEDMatrix::drawOnMatrix(float factor){
   // loop over all minute indicator leds
   for(int i = 0; i < 4; i++){
     uint32_t filteredColor = interpolateColor24bit(currentindicators[i], targetindicators[i], factor);
-    (*neomatrix).drawPixel(WIDTH - (1+i), HEIGHT, color24to16bit(filteredColor));
+    (*neomatrix).drawPixel(i, HEIGHT, color24to16bit(filteredColor));
     currentindicators[i] = filteredColor;
     totalCurrent += calcEstimatedLEDCurrent(filteredColor);
   }

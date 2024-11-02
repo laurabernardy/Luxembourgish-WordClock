@@ -1,9 +1,9 @@
 
-const String clockStringGerman =  "ESPISTAFUNFVIERTELZEHNZWANZIGUVORTECHNICNACHHALBMELFUNFXCONTROLLEREINSEAWZWEIDREITUMVIERSECHSQYACHTSIEBENZWOLFZEHNEUNJUHR";
+const String clockStringGerman =  "ETPASSAECHIVEIERELZINGZWANZEGHUNNFENNEFCNFIRSOPLWHALWERFENNEFODECHENGSGARZWOUDRAITUVEIERSECHSQAACHTSIEWENEELEFZWIELEFZINGNINGKENAUER";
 
 /**
  * @brief control the four minute indicator LEDs
- * 
+ *
  * @param minutes minutes to be displayed [0 ... 59]
  * @param color 24bit color value
  */
@@ -99,55 +99,54 @@ int showStringOnClock(String message, uint32_t color){
 String timeToString(uint8_t hours,uint8_t minutes){
   Serial.println(hours);
   Serial.println(minutes);
-  
-  //ES IST
-  String message = "ES IST ";
+   //ES IST
+  String message = "ET ASS ";
 
   
   //show minutes
   if(minutes >= 5 && minutes < 10)
   {
-    message += "FUNF NACH ";
+    message += "FENNEF OP ";
   }
   else if(minutes >= 10 && minutes < 15)
   {
-    message += "ZEHN NACH ";
+    message += "ZING OP ";
   }
   else if(minutes >= 15 && minutes < 20)
   {
-    message += "VIERTEL NACH ";
+    message += "VEIEREL OP ";
   }
   else if(minutes >= 20 && minutes < 25)
   {
-    message += "ZEHN VOR HALB "; 
+    message += "ZWANZEG OP "; 
   }
   else if(minutes >= 25 && minutes < 30)
   {
-    message += "FUNF VOR HALB ";
+    message += "FENNEF FIR HALWER ";
   }
   else if(minutes >= 30 && minutes < 35)
   {
-    message += "HALB ";
+    message += "HALWER ";
   }
   else if(minutes >= 35 && minutes < 40)
   {
-    message += "FUNF NACH HALB ";
+    message += "FENNEF OP HALWER ";
   }
   else if(minutes >= 40 && minutes < 45)
   {
-    message += "ZEHN NACH HALB ";
+    message += "ZWANZEG FIR ";
   }
   else if(minutes >= 45 && minutes < 50)
   {
-    message += "VIERTEL VOR ";
+    message += "VEIEREL FIR ";
   }
   else if(minutes >= 50 && minutes < 55)
   {
-    message += "ZEHN VOR ";
+    message += "ZING FIR ";
   }
   else if(minutes >= 55 && minutes < 60)
   {
-    message += "FUNF VOR ";
+    message += "FENNEF FIR ";
   }
 
   //convert hours to 12h format
@@ -155,7 +154,7 @@ String timeToString(uint8_t hours,uint8_t minutes){
   {
       hours -= 12;
   }
-  if(minutes >= 20)
+  if(minutes >= 25)
   {
       hours++;
   }
@@ -164,54 +163,54 @@ String timeToString(uint8_t hours,uint8_t minutes){
       hours = 0;
   }
 
-  // show hours
+    // show hours
   switch(hours)
   {
   case 0:
-    message += "ZWOLF ";
+    message += "ZWIELEF ";
     break;
   case 1:
-    message += "EIN";
+    message += "ENG ";
     //EIN(S)
-    if(minutes > 4){
-      message += "S";
-    }
-    message += " ";
+    //if(minutes > 4){
+    //  message += "S";
+    //}
+    //message += " ";
     break;
   case 2:
-    message += "ZWEI ";
+    message += "ZWOU ";
     break;
   case 3:
-    message += "DREI ";
+    message += "DRAI ";
     break;
   case 4:
-    message += "VIER ";
+    message += "VEIER ";
     break;
   case 5:
-    message += "FUNF ";
+    message += "FENNEF ";
     break;
   case 6:
     message += "SECHS ";
     break;
   case 7:
-    message += "SIEBEN ";
+    message += "SIEWEN ";
     break;
   case 8:
-    message += "ACHT ";
+    message += "AACHT ";
     break;
   case 9:
-    message += "NEUN ";
+    message += "NING ";
     break;
   case 10:
-    message += "ZEHN ";
+    message += "ZING ";
     break;
   case 11:
-    message += "ELF ";
+    message += "EELEF ";
     break;
   }
   if(minutes < 5)
   {
-    message += "UHR ";
+    message += "AUER ";
   }
 
   Serial.println(message);
