@@ -1,5 +1,5 @@
 
-const String clockStringGerman =  "ETPASSAECHIVEIERELZINGZWANZEGHUNNFENNEFCNFIRSOPLWHALWERFENNEFODECHENGSGARZWOUDRAITUVEIERSECHSQAACHTSIEWENEELEFZWIELEFZINGNINGKENAUER";
+const String clockStringGerman =  "ETPASSAECHIVEIERELZENGZWANZEGHUNNFENNEFCNVIRSOPLWHALWERFENNEFODECHENGSGARZWOUDRAITUVEIERSECHSQAACHTSIEWENEELEFZWIELEFZENGNINGKENAUER";
 
 /**
  * @brief control the four minute indicator LEDs
@@ -110,7 +110,7 @@ String timeToString(uint8_t hours,uint8_t minutes){
   }
   else if(minutes >= 10 && minutes < 15)
   {
-    message += "ZING OP ";
+    message += "ZENG OP ";
   }
   else if(minutes >= 15 && minutes < 20)
   {
@@ -122,7 +122,7 @@ String timeToString(uint8_t hours,uint8_t minutes){
   }
   else if(minutes >= 25 && minutes < 30)
   {
-    message += "FENNEF FIR HALWER ";
+    message += "FENNEF VIR HALWER ";
   }
   else if(minutes >= 30 && minutes < 35)
   {
@@ -134,19 +134,19 @@ String timeToString(uint8_t hours,uint8_t minutes){
   }
   else if(minutes >= 40 && minutes < 45)
   {
-    message += "ZWANZEG FIR ";
+    message += "ZWANZEG VIR ";
   }
   else if(minutes >= 45 && minutes < 50)
   {
-    message += "VEIEREL FIR ";
+    message += "VEIEREL VIR ";
   }
   else if(minutes >= 50 && minutes < 55)
   {
-    message += "ZING FIR ";
+    message += "ZENG VIR ";
   }
   else if(minutes >= 55 && minutes < 60)
   {
-    message += "FENNEF FIR ";
+    message += "FENNEF VIR ";
   }
 
   //convert hours to 12h format
@@ -202,7 +202,7 @@ String timeToString(uint8_t hours,uint8_t minutes){
     message += "NING ";
     break;
   case 10:
-    message += "ZING ";
+    message += "ZENG ";
     break;
   case 11:
     message += "EELEF ";
