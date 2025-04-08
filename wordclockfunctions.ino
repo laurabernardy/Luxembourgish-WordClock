@@ -1,5 +1,5 @@
 
-const String clockStringGerman =  "ETPASSAECHIVEIERELZENGZWANZEGHUNNFENNEFCNVIRSOPLWHALWERFENNEFODECHENGSGARZWOUDRAITUVEIERSECHSQAACHTSIEWENEELEFZWIELEFZENGNINGKENAUER";
+const String clockStringLux =  "ETPASSAECHIVEIERELZENGZWANZEGHUNNFENNEFCNVIRSOPLWHALWERFENNEFODECHENGSGARZWOUDRAITUVEIERSECHSQAACHTSIWENKEELEFZWIELEFZENGNINGKENAUER";
 
 /**
  * @brief control the four minute indicator LEDs
@@ -62,7 +62,7 @@ int showStringOnClock(String message, uint32_t color){
       
       if(word.length() > 0){
         // find word in clock string
-        positionOfWord = clockStringGerman.indexOf(word, lastLetterClock);
+        positionOfWord = clockStringLux.indexOf(word, lastLetterClock);
         
         if(positionOfWord >= 0){
           // word found on clock -> enable leds in targetgrid
@@ -193,7 +193,7 @@ String timeToString(uint8_t hours,uint8_t minutes){
     message += "SECHS ";
     break;
   case 7:
-    message += "SIEWEN ";
+    message += "SIWEN ";
     break;
   case 8:
     message += "AACHT ";
